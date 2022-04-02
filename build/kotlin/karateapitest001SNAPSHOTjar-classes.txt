@@ -1,1 +1,0 @@
-C:\workspace\karate-api-test\build\classes\kotlin\main\karate\test\TestRunner.class;C:\workspace\karate-api-test\build\classes\kotlin\main\karate\test\TestRunnerKt.class
