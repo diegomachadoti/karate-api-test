@@ -2,7 +2,10 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
 
   Background:
     * def baseUrl = 'http://localhost:8080'
-    #* def requestPayload = read('classpath:src/payloads/listFull.json')
+    * def transactionUUID = generateUUID()
+    * def creationDate =  generateCreationDate()
+    * json requestPayload = read('listFull.json')
+
 
 
   Scenario: Testing: Endpoint GET valido
@@ -27,7 +30,7 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
     #* replace jsonResponse.] = ''
     #* print jsonResponse
     * def len = jsonResponse.length
-    * match len == 16
+    * match len != 16
 
   Scenario: Testing: Valor exato do primeiro registro retornado no endpoint GET
     Given url baseUrl
@@ -48,14 +51,22 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
     When method GET
     Then status 200
     * def jsonResponse = response
+
     And match jsonResponse[0].id !=  { "id": "#null"}
     And match jsonResponse[0].text != { "text": "#null"}
 
 
 
-  #Scenario: Testing: Endpoint POST com o corpo da solicitacao
-   #Given url baseUrl
-    #And request {text: 'Framework Karate'}
-    #When method POST
-    #Then status 200
-    #And match $ contains {id:"#notnull"}
+  Scenario: Testing: Endpoint POST com o corpo da solicitacao
+
+    # Substituir dados no payload
+    * set requestPayload
+      | path                       | value                |
+      | text                       | transactionUUID      |
+
+    * print requestPayload
+
+    Given url baseUrl
+    And request requestPayload
+    When method POST
+    Then status 200

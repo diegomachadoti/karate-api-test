@@ -1,24 +1,48 @@
 # karate-api-test
+Projeto contendo exemplos de teste utilizando o framework de automação Karate.
 
-1- Setar configurações do IntelliJ
-```
-Open IntelliJ on your project and go to File >> Project Structure >> Project and on the option Project SDK Select java 11 and apply the changes.
-Intellij Project structure
-Edit--------
-Then try these options on File >> Settings.
+---
 
-1.Set Gradle JVM Home Gradle JVM
-2.Set the JDK version in the Project module settings JDK version in the Project module
-3.Check the JDK version in the Modules version in the Modules
-Close IntelliJ and open it again.
-```
-Erro comum executando na JDK errada 
-```
-karate/test/TestRunner has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
-```
+## Tecnologias
+Abaixo a lista de tecnologias utilizadas no projeto:
+- Karate 0.9.6 (https://github.com/intuit/karate);
+- JUnit 5;
+- Gradle 7.1;
+- Java JDK 11;
+
+### Plugins instalados no IntelliJ
+- Gherkin.
+- Cucumber For Kotlin
+
+---
+
+## Pré Condição 
+O projeto esta testando o webservice do projeto de exemplo abaixo. Com isso é necessário subir esse projeto local.
+* [webService](https://github.com/diegomachadoti/webService-restAssured-test)
+
+## Estrutura dos testes
+Os testes estão estruturados em `src/main/test`, onde encontramos basicamente:
+- `src/main/test/kotlin/webServiceApi` Path contendo todos os arquivos de teste da funcionalidade.
+- `src/main/test/kotlin/karate-config.js` arquivo onde são definidas diversas configurações do Karate, como por exemplo, ambiente de teste, parâmetros dinâmicos, informações de acesso, variáveis globais, etc.
+
+---
+
+## Executando os testes
+Abaixo as informações necessárias para execuçãoo dos testes:
+- Na classe `WebServiceRunner.kt` opção botão direito Run.
+
+- Observaçãoes:
+    - Se utilizar o plugin do Cucumber no IntelliJ, através do arquivo `.feature`, é possével executar os testes de apenas uma feature ou atá mesmo de um scenario específico.
 
 
+## Report dos Testes
+Resultado dos testes encontra-se na pasta `karate-api-test/build/karate-reports/...`
+![img.png](img.png)
 
-REF
-- https://karatelabs.github.io/karate/
-- https://github.com/karatelabs/karate/tree/master/karate-junit4/src/test/java/com/intuit/karate/junit4/demos
+## Analise de Código
+Projeto configurado no sonarCloud
+* [Sonar Cloud](https://sonarcloud.io/summary/overall?id=diegomachadoti_karate-api-test)
+
+## Referência
+* [Karate Labs](https://karatelabs.github.io/karate/)
+* [karate Exemplos](https://github.com/karatelabs/karate/tree/master/karate-junit4/src/test/java/com/intuit/karate/junit4/demos)
