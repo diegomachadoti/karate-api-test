@@ -2,9 +2,9 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
 
   Background:
     * def baseUrl = 'http://localhost:8080'
-    * def transactionUUID = generateUUID()
+    * def textNew = generateDescription()
     * def creationDate =  generateCreationDate()
-    * json requestPayload = read('listFull.json')
+    * json requestPayload = read('webServiceExemplo.json')
 
 
 
@@ -38,13 +38,15 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
     Then status 200
     * print response
     * def jsonResponse = response
-    And match jsonResponse[0].id == "d57c68b1-d6dc-458a-9016-2484486cb798"
+    # Substituir o assert abaixo com o id do primeiro registro inserido na carga inicial do Web Service utilizado de exemplo
+    And match jsonResponse[0].id == "87aa36e3-cde3-481e-87ae-68e6acb2d893"
 
   Scenario: Testing: Resposta GET contem um campo especifico
     Given url baseUrl
     When method GET
     Then status 200
-    And match $ contains {id:"d57c68b1-d6dc-458a-9016-2484486cb798",text:"Teste de Contrato"}
+    # Substituir o assert abaixo com o id do primeiro registro inserido na carga inicial do Web Service utilizado de exemplo
+    And match $ contains {id:"87aa36e3-cde3-481e-87ae-68e6acb2d893",text:"Testes E2E"}
 
   Scenario: Testing: Resposta GET validando campo obrigatorio usando marcadores
     Given url baseUrl
@@ -61,8 +63,8 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
 
     # Substituir dados no payload
     * set requestPayload
-      | path                       | value                |
-      | text                       | transactionUUID      |
+      | path                       | value        |
+      | text                       | textNew      |
 
     * print requestPayload
 

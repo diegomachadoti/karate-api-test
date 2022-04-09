@@ -2,9 +2,9 @@ function fn() {
     var config = {
         baseUrl: 'http://localhost:8080',
 
-        generateUUID: function () {
+        generateDescription: function () {
             var generated = java.util.UUID.randomUUID() + ''
-            return generated.toUpperCase().replaceAll('-', '')
+            return 'Test-karate '+ generated.toUpperCase().replaceAll('-', '')
         },
 
         generateCreationDate: function () {
