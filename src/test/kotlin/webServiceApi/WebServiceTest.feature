@@ -57,7 +57,7 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
 
 
 
-  Scenario: Testing: Endpoint POST com o corpo da solicitacao
+  Scenario: Testing: Endpoint POST lendo e substituindo dados de um arquivo json
 
     # Substituir dados no payload
     * set requestPayload
