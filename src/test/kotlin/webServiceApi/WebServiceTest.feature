@@ -23,7 +23,6 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
     Given url baseUrl
     When method GET
     Then status 200
-    Then status 200
     * print response
     * def jsonResponse = response
     #* replace jsonResponse.[ = ''
@@ -39,14 +38,14 @@ Feature: Testando webService-restAssured-test do meu git usando Karate
     * print response
     * def jsonResponse = response
     # Substituir o assert abaixo com o id do primeiro registro inserido na carga inicial do Web Service utilizado de exemplo
-    And match jsonResponse[0].id == "87aa36e3-cde3-481e-87ae-68e6acb2d893"
+    And match jsonResponse[0].id == "8ce6e581-84c9-4c5e-a594-cf9edf24114a"
 
   Scenario: Testing: Resposta GET contem um campo especifico
     Given url baseUrl
     When method GET
     Then status 200
     # Substituir o assert abaixo com o id do primeiro registro inserido na carga inicial do Web Service utilizado de exemplo
-    And match $ contains {id:"87aa36e3-cde3-481e-87ae-68e6acb2d893",text:"Testes E2E"}
+    And match $ contains {id:"8ce6e581-84c9-4c5e-a594-cf9edf24114a",text:"Testes E2E"}
 
   Scenario: Testing: Resposta GET validando campo obrigatorio usando marcadores
     Given url baseUrl
