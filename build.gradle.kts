@@ -46,7 +46,9 @@ sourceSets.getByName("test") {
 tasks.withType<Test> {
     useJUnitPlatform()
     systemProperties(System.getProperties().mapKeys { it.key as String })
+    // pull do karate options para ser utilizado em tempo de execução com o gradlew
     systemProperty("karate.options", System.getProperty("karate.options"))
+    // pull do karate env para ser utilizado em tempo de execução com o gradlew
     systemProperty("karate.env", System.getProperty("karate.env"))
     outputs.upToDateWhen { false }
     testLogging.showStandardStreams = true

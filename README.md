@@ -35,6 +35,12 @@ Abaixo as informações necessárias para execuçãoo dos testes:
 - Observaçãoes:
     - Se utilizar o plugin do Cucumber no IntelliJ, através do arquivo `.feature`, é possével executar os testes de apenas uma feature ou atá mesmo de um scenario específico.
 
+**Executar o teste via linha de comando por tags**
+> ./gradlew test -Dkarate.options="--tags <nome_da_tag>"
+
+**Executar o teste via linha de comando por tnome do teste .feature**
+> ./gradlew test -Dkarate.options="--name '<nome_do_teste>'"
+
 
 ## Report dos Testes
 Resultado dos testes encontra-se na pasta `karate-api-test/build/karate-reports/...`
