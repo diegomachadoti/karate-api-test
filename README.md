@@ -1,24 +1,25 @@
-# karate-api-test
-Projeto contendo exemplos de teste utilizando o framework de automação Karate.
+# *karate-api-test*
+🎯 **Projeto contendo exemplos de teste utilizando o framework de automação Karate.**
 
 ---
 
-## Tecnologias
+## 💻 Tecnologias
 Abaixo a lista de tecnologias utilizadas no projeto:
-- Karate 0.9.6 (https://github.com/intuit/karate);
-- JUnit 5;
-- Gradle 7.1;
-- Java JDK 11;
+* [Karate 0.9.6](https://github.com/intuit/karate)
+* [JUnit 5](https://junit.org/junit5/)
+* [Gradle 7.1](https://docs.gradle.org/7.1/release-notes.html)
+* [Java JDK 11](https://jdk.java.net/11/)
 
-### Plugins instalados no IntelliJ
-- Gherkin.
-- Cucumber For Kotlin
+### 🛠️ Plugins instalados no IntelliJ
+* [Karate](https://plugins.jetbrains.com/plugin/19232-karate)
 
 ---
 
-## Pré Condição 
-O projeto esta testando o webservice do projeto de exemplo abaixo. Com isso é necessário subir esse projeto local.
-* [webService](https://github.com/diegomachadoti/webService-restAssured-test)
+## 🔨 Pré Condição 
+Temos exemplos de teste validando 3 aplicações diferentes, segue eles com o passo a passo para subir local
+* [WebService Kotlin](https://github.com/diegomachadoti/webService-restAssured-test)
+* [WebService Serverest](https://serverest.dev/)
+* [WebService em Java Script](https://github.com/diegomachadoti/api-full-stack-be-fe)
 
 ## Estrutura dos testes
 Os testes estão estruturados em `src/main/test`, onde encontramos basicamente:
@@ -27,13 +28,12 @@ Os testes estão estruturados em `src/main/test`, onde encontramos basicamente:
 - `src/main/test/kotlin/karate-config.js` arquivo onde são definidas diversas configurações do Karate, como por exemplo, ambiente de teste, parâmetros dinâmicos, informações de acesso, variáveis globais, etc.
 
 ---
+## 🚀 Executando os testes
+Abaixo as informações necessárias para execução dos testes:
+- Na classe `RunnerTest.kt` opção botão direito Run, roda todos os testes.
 
-## Executando os testes
-Abaixo as informações necessárias para execuçãoo dos testes:
-- Na classe `WebServiceRunner.kt` opção botão direito Run.
-
-- Observaçãoes:
-    - Se utilizar o plugin do Cucumber no IntelliJ, através do arquivo `.feature`, é possével executar os testes de apenas uma feature ou atá mesmo de um scenario específico.
+- Rodar testes específico:
+    - Se utilizar o plugin do Karate no IntelliJ, através do arquivo `.feature`, é possível executar os testes.
 
 **Executar o teste via linha de comando por tags**
 > ./gradlew test -Dkarate.options="--tags <nome_da_tag>"
@@ -42,14 +42,15 @@ Abaixo as informações necessárias para execuçãoo dos testes:
 > ./gradlew test -Dkarate.options="--name '<nome_do_teste>'"
 
 
-## Report dos Testes
+## 📊 Report dos Testes
 Resultado dos testes encontra-se na pasta `karate-api-test/build/karate-reports/...`
 ![img.png](img.png)
 
-## Analise de Código
+## ☁ Analise de Código
 Projeto configurado no sonarCloud
 * [Sonar Cloud](https://sonarcloud.io/summary/overall?id=diegomachadoti_karate-api-test)
 
-## Referência
+## 🔗 Referência
 * [Karate Labs](https://karatelabs.github.io/karate/)
 * [karate Exemplos](https://github.com/karatelabs/karate/tree/master/karate-junit4/src/test/java/com/intuit/karate/junit4/demos)
+* [Start Spring IO](https://start.spring.io/)

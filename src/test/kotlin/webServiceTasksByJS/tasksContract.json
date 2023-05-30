@@ -1,0 +1,6 @@
+{
+  "id": "#number? _ >= 0",
+  "title": "#string",
+  "status": "#string ? _ == 'pendente' || _ == 'em andamento' || _ == 'concluída'",
+  "created_at": "#string"
+}

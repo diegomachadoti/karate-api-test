@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[1:8]","start":1685451251496,"end":1685451251899,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[1:8] 09:54:11.496-09:54:11.899 Realizar GET na app"},{"id":2,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[2:14]","start":1685451251907,"end":1685451251942,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[2:14] 09:54:11.907-09:54:11.942 Realizar GET para itens"},{"id":3,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.1:28]","start":1685451251950,"end":1685451251957,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.1:28] 09:54:11.950-09:54:11.957 Realizar GET usando dados dinâmicos"},{"id":4,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.2:29]","start":1685451251963,"end":1685451251972,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.2:29] 09:54:11.963-09:54:11.972 Realizar GET usando dados dinâmicos"},{"id":5,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.3:30]","start":1685451251979,"end":1685451251988,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.3:30] 09:54:11.979-09:54:11.988 Realizar GET usando dados dinâmicos"},{"id":6,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.4:31]","start":1685451251993,"end":1685451252005,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.4:31] 09:54:11.993-09:54:12.005 Realizar GET usando dados dinâmicos"},{"id":7,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.5:32]","start":1685451252013,"end":1685451252034,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.5:32] 09:54:12.013-09:54:12.034 Realizar GET usando dados dinâmicos"},{"id":8,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.6:33]","start":1685451252040,"end":1685451252053,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.6:33] 09:54:12.040-09:54:12.053 Realizar GET usando dados dinâmicos"},{"id":9,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.7:34]","start":1685451252058,"end":1685451252078,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.7:34] 09:54:12.058-09:54:12.078 Realizar GET usando dados dinâmicos"},{"id":10,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.8:35]","start":1685451252087,"end":1685451252097,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.8:35] 09:54:12.087-09:54:12.097 Realizar GET usando dados dinâmicos"},{"id":11,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.9:36]","start":1685451252102,"end":1685451252113,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.9:36] 09:54:12.102-09:54:12.113 Realizar GET usando dados dinâmicos"},{"id":12,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.10:37]","start":1685451252118,"end":1685451252127,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.10:37] 09:54:12.118-09:54:12.127 Realizar GET usando dados dinâmicos"},{"id":13,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.11:38]","start":1685451252131,"end":1685451252140,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[3.11:38] 09:54:12.131-09:54:12.140 Realizar GET usando dados dinâmicos"},{"id":14,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[4:42]","start":1685451252144,"end":1685451252227,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[4:42] 09:54:12.144-09:54:12.227 Realizar GET para validar o contrato usando JSON como validador"},{"id":15,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[5.1:59]","start":1685451252242,"end":1685451252284,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[5.1:59] 09:54:12.242-09:54:12.284 Realizar POST usando CSV como dados de teste"},{"id":16,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[5.2:59]","start":1685451252287,"end":1685451252297,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[5.2:59] 09:54:12.287-09:54:12.297 Realizar POST usando CSV como dados de teste"},{"id":17,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[5.3:59]","start":1685451252302,"end":1685451252311,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[5.3:59] 09:54:12.302-09:54:12.311 Realizar POST usando CSV como dados de teste"},{"id":18,"group":1,"content":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[6:62]","start":1685451252319,"end":1685451252348,"title":"src\/test\/kotlin\/webServiceTasksByJS\/TasksStudy[6:62] 09:54:12.319-09:54:12.348 Realizar POST com request usando JSON como request"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
