@@ -23,7 +23,7 @@ Temos exemplos de teste validando 3 aplicações diferentes, segue eles com o pa
 
 ## Estrutura dos testes
 Os testes estão estruturados em `src/main/test`, onde encontramos basicamente:
-- `src/main/test/kotlin/webServiceApi` Path contendo todos os arquivos de teste da funcionalidade:
+- `src/main/test/kotlin/*` Path contendo todos os arquivos de teste da funcionalidade:
 ![img_1.png](img_1.png)
 - `src/main/test/kotlin/karate-config.js` arquivo onde são definidas diversas configurações do Karate, como por exemplo, ambiente de teste, parâmetros dinâmicos, informações de acesso, variáveis globais, etc.
 
