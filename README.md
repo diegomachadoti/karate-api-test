@@ -35,13 +35,13 @@ Abaixo as informações necessárias para execução dos testes:
 - Rodar testes específico:
     - Se utilizar o plugin do Karate no IntelliJ, através do arquivo `.feature`, é possível executar os testes.
 
-**Executar o teste via linha de comando por tags**
-> ./gradlew test -Dkarate.options="--tags <nome_da_tag>"
+**Executar teste via linha de comando por tags**
+> ./gradlew test -Dkarate.options="--tags @getByall classpath:webServiceTasksByJS/TasksStudy.feature"
 
-**Executar o teste via linha de comando por tnome do teste .feature**
-> ./gradlew test -Dkarate.options="--name '<nome_do_teste>'"
+**Executar teste via linha de comando por .feature**
+> ./gradlew test -Dkarate.options="classpath:webServiceTasksByJS/TasksStudy.feature"
 
-
+---
 ## 📊 Report dos Testes
 Resultado dos testes encontra-se na pasta `karate-api-test/build/karate-reports/...`
 ![img.png](img.png)
@@ -50,6 +50,7 @@ Resultado dos testes encontra-se na pasta `karate-api-test/build/karate-reports/
 Projeto configurado no sonarCloud
 * [Sonar Cloud](https://sonarcloud.io/summary/overall?id=diegomachadoti_karate-api-test)
 
+---
 ## 🔗 Referência
 * [Karate Labs](https://karatelabs.github.io/karate/)
 * [karate Exemplos](https://github.com/karatelabs/karate/tree/master/karate-junit4/src/test/java/com/intuit/karate/junit4/demos)
