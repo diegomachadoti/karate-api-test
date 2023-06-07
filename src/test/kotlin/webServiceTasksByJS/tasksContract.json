@@ -1,5 +1,5 @@
 {
-  "id": "#number? _ >= 0",
+  "id": "#number? _ >= 0 && _ < 11",
   "title": "#string",
   "status": "#string ? _ == 'pendente' || _ == 'em andamento' || _ == 'concluída'",
   "created_at": "#string"

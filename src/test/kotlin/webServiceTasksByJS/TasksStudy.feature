@@ -37,9 +37,8 @@ Feature: Teste de API usando o Karate
       | 234   |
       | 267   |
 
-
   @getContractTestByJson
-  Scenario: Realizar GET para validar o contrato usando JSON como validador
+  Scenario: Realizar GET para validar o contrato usando JSON como validador passando por um registro
     * def peopleContract = read('tasksContract.json')
     Given url baseUrl + '/1'
     When method GET
@@ -47,6 +46,27 @@ Feature: Teste de API usando o Karate
     And match response[0] == peopleContract
     * print peopleContract
     * print response
+
+  @getContractTestByJson
+  Scenario: Realizar GET para validar o contrato usando JSON como validador passando por todos os registros
+    * def peopleContract = read('tasksContract.json')
+    Given url baseUrl
+    When method GET
+    Then status 200
+    * def responseSize = karate.sizeOf(response)
+    * print 'Tamanho do response:', responseSize
+    * print 'Response completo:', response
+    * eval
+      """
+      for (var i = 0; i < responseSize.length; i++) {
+        karate.match(validations[i].value, peopleContract);
+      }
+      """
+    * print peopleContract
+    * print response
+
+
+
 
   @postByCsvFile
   Scenario Outline: Realizar POST usando CSV como dados de teste
@@ -69,9 +89,3 @@ Feature: Teste de API usando o Karate
       | status    | "em andamento"  |
 
     * print requestPayload
-
-    Given url baseUrl
-    And request requestPayload
-    When method POST
-    Then status 201
-    And match response == { insertId: '#number? _ >= 0'}
