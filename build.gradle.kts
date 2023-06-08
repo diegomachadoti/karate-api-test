@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.4.21"
     kotlin("plugin.spring") version "1.4.21"
     jacoco
+    id("scala")
 }
 
 group = "karate"
@@ -29,6 +30,13 @@ dependencies {
     // Karate
     testCompile("com.intuit.karate:karate-apache:0.9.6")
     testImplementation("com.intuit.karate:karate-junit5:1.1.0")
+
+    // Karate Gatling
+    implementation("com.intuit.karate:karate-gatling:1.4.0")
+    testImplementation("com.intuit.karate:karate-netty:0.9.3.RC1")
+    implementation("io.netty:netty-resolver-dns-native-macos:4.1.90.Final")
+    implementation("io.netty:netty-tcnative-boringssl-static:2.0.61.Final")
+
 }
 
 tasks.withType<KotlinCompile> {
@@ -53,4 +61,20 @@ tasks.withType<Test> {
     outputs.upToDateWhen { false }
     testLogging.showStandardStreams = true
     finalizedBy("jacocoTestReport")
+}
+
+tasks.register<JavaExec>("gatlingRun") {
+    group = "Web Tests"
+    description = "Run Gatling Tests"
+    val gatlingReportDir = File(buildDir, "reports/gatling")
+    gatlingReportDir.mkdirs()
+    classpath = sourceSets["test"].runtimeClasspath
+    main = "io.gatling.app.Gatling"
+    args = listOf(
+        "-s", "mock.CatsKarateSimulation",
+        "-rf", gatlingReportDir.absolutePath
+    )
+    //systemProperties(System.getProperties())
+    systemProperty("java.util.logging.config.file", "logging.properties")
+    systemProperty("karate.env", "test")
 }
