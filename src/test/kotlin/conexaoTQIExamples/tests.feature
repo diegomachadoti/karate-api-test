@@ -2,8 +2,12 @@ Feature: Realizar testes de API no conexão TQI
 
 
   Background:
+    * def urlBase = 'http://localhost:3333/tasks/'
     * url 'http://localhost:3333/tasks/'
     * def UUID = function(){return java.util.UUID.randomUUID()}
+
+    # Essa função chama 'after-feature.feature' e executa todos os deletes dos registros inseridos
+    #* configure afterFeature = function(){ karate.call('after-feature.feature'); }
 
 # GET (teste com assert, teste de contrato, teste parametrizado )
   Scenario: Realizar GET validando o resultado
@@ -18,7 +22,8 @@ Feature: Realizar testes de API no conexão TQI
     * match each response[*] == contract
 
   Scenario Outline: Realizar GET com consultas dinâmicas
-    * url urlBase + id
+    * url urlBase
+    * path id
     * method GET
     * status 200
     * match response[0] == {"id":"#notnull","title":"#notnull","status":"#notnull","created_at":"#notnull"}
@@ -48,9 +53,9 @@ Feature: Realizar testes de API no conexão TQI
   Scenario: Realizar POST utilizando arquivo JSON
     * def requestJSON = read('payloads.json')
     * set requestJSON
-      | path  | value                             |
-      | title | "Teste POST - CREATE by file JSON " + UUID()    |
-      | status| "em andamento"                    |
+      | path  | value                                       |
+      | title | "Teste POST - CREATE by JSON " + UUID()     |
+      | status| "em andamento"                              |
 
     * request requestJSON
     * method POST
@@ -64,7 +69,8 @@ Feature: Realizar testes de API no conexão TQI
     * method POST
     * status 201
     * def id = response.insertId
-    * url urlBase + id
+    * url urlBase
+    * path id
     * request {"title":"#(title)","status":"concluída"}
     * method PUT
     * status 204
