@@ -31,7 +31,7 @@ Feature: Realizar testes de API no conexão TQI
 
 # POST (teste com assert, teste realizando leitura de um CSV, teste utilizando arquivo JSON)
   Scenario: Realizar POST validando resultado
-    * def title = "Teste POST " + UUID()
+    * def title = "Teste POST - CREATE " + UUID()
     * request {"title":"#(title)","status":"pendente"}
     * method POST
     * status 201
@@ -49,7 +49,7 @@ Feature: Realizar testes de API no conexão TQI
     * def requestJSON = read('payloads.json')
     * set requestJSON
       | path  | value                             |
-      | title | "Teste create JSON 1" + UUID()    |
+      | title | "Teste POST - CREATE by file JSON " + UUID()    |
       | status| "em andamento"                    |
 
     * request requestJSON
@@ -59,8 +59,8 @@ Feature: Realizar testes de API no conexão TQI
 
 # PUT (Criação e Atualização de um novo registro)
   Scenario: Realizar UPDATE validando a atualização do registro
-    * def title = "Teste UPDATE " + UUID()
-    * request {"title":"Teste CREATE by UPDATE","status":"pendente"}
+    * def title = "Teste PUT - UPDATE " + UUID()
+    * request {"title":"Teste PUT CREATE by UPDATE","status":"pendente"}
     * method POST
     * status 201
     * def id = response.insertId
@@ -72,7 +72,7 @@ Feature: Realizar testes de API no conexão TQI
 
 # DELETE (Criação, exclusão e consulta após exclusão)
   Scenario: Realizar DELETE validando a exclusão do registro
-    * request {"title":"Teste DELETE","status":"pendente"}
+    * request {"title":"Teste DELETE - CREATE by DELETE","status":"pendente"}
     * method POST
     * status 201
     * def id = response.insertId
