@@ -36,7 +36,7 @@ Feature: Realizar testes de API no conexão TQI
 
 # POST (teste com assert, teste realizando leitura de um CSV, teste utilizando arquivo JSON)
   Scenario: Realizar POST validando resultado
-    * def title = "Teste POST - CREATE " + UUID()
+    * def title = "Teste POST - CREATE by REQUEST " + UUID()
     * request {"title":"#(title)","status":"pendente"}
     * method POST
     * status 201
