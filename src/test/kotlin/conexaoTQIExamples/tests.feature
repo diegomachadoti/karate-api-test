@@ -2,8 +2,7 @@ Feature: Realizar testes de API no conexão TQI
 
 
   Background:
-    * def urlBase = 'http://localhost:3333/tasks/'
-    * url urlBase
+    * url 'http://localhost:3333/tasks/'
     * def UUID = function(){return java.util.UUID.randomUUID()}
 
 # GET (teste com assert, teste de contrato, teste parametrizado )
